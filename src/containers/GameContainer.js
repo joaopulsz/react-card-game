@@ -32,7 +32,7 @@ const GameContainer = () => {
         const player = cards[0];
         const comp = cards[1];
 
-        if(parseInt(player.value) > parseInt(comp.value)) {
+        if (parseInt(player.value) > parseInt(comp.value)) {
             setPlayerStack(playerStack + parseInt(bet));
             setComputerStack(computerStack - parseInt(bet));
         } else if (parseInt(player.value) === parseInt(comp.value)) {
@@ -41,14 +41,23 @@ const GameContainer = () => {
             setPlayerStack(playerStack - parseInt(bet));
             setComputerStack(computerStack + parseInt(bet));
         }
+
     }
 
-    return (
-        <div>
-            <Computer card={computerCard} stack={computerStack}/>
-            <Player card={playerCard} stack={playerStack}/>
-            <GameForm newRound={handleBetAndNewHand}/>
-        </div>
+    return playerStack <= 0 || computerStack <= 0 ? (
+        <main>
+            <h2>GAME OVER!</h2>
+        </main>
+    ) : (
+        <main>
+            <div id="game-div">
+                <Computer card={computerCard} stack={computerStack}/>
+                <Player card={playerCard} stack={playerStack}/>
+            </div>
+            <div id="betting-form">
+                <GameForm newRound={handleBetAndNewHand}/>
+            </div>
+        </main>
     )
 
 }

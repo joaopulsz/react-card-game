@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(138, 233, 132);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#game-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#bet-input {
+    font-size: 1.5rem;
+    margin: 0px 10px;
+}
+
+#bet-button {
+    font-size: 1.5rem;
+}

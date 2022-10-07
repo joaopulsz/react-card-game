@@ -16,9 +16,9 @@ const GameForm = ({drawCards, newRound}) => {
     return (
         <form>
             <label htmlFor="bet">Bet:</label>
-            <input type="text" name="bet" value={bet} onChange={handleBetChange} placeholder="Enter bet amount"></input>
+            <input id="bet-input" type="text" name="bet" value={bet} onChange={handleBetChange} placeholder="Enter bet amount"></input>
 
-            <button type="submit" onClick={handleClick}>Place bet!</button>
+            <button id="bet-button" type="submit" onClick={handleClick}>Place bet!</button>
         </form>  
     )
 

@@ -1,10 +1,13 @@
 const Player = ({card, stack}) => {
     return card.image ?  ( 
         <div>
-            <p>Your stack: {stack}</p>
             <img src={card.image} alt='card'></img>
+            <p>Your stack: {stack}</p>
         </div>
-    ) : (<p>Your stack: {stack}</p>)
+    ) : (<div>
+    <p>Your stack: {stack}</p>
+    </div>
+    )
 }
 
 export default Player;
