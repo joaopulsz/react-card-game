@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GameForm = ({drawCards, newBet}) => {
+const GameForm = ({drawCards, newRound}) => {
 
     const [bet, setBet] = useState(0);
 
@@ -8,9 +8,9 @@ const GameForm = ({drawCards, newBet}) => {
         setBet(e.target.value)
     }
 
-    const handleClick = () => {
-        drawCards();
-        newBet(bet)
+    const handleClick = (e) => {
+        e.preventDefault();
+        newRound(bet);
     }
 
     return (

@@ -1,7 +1,10 @@
-const Computer = ({card}) => {
-    return (
-        <img src={card.image} alt='card'></img>
-    )
+const Computer = ({card, stack}) => {
+    return card.image ?  ( 
+        <div>
+            <p>Your stack: {stack}</p>
+            <img src={card.image} alt='card'></img>
+        </div>
+    ) : (<p>Your stack: {stack}</p>)
 }
 
 export default Computer;
